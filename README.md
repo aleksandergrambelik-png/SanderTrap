@@ -100,15 +100,19 @@ A future release will add a config.json or CLI arguments for easier configuratio
 
 ---
 
-## AI Collaboration
+## AI Collaboration & Tooling
 
-This project was developed with human and AI collaboration.
+This project was developed with human and AI collaboration. For debugging and documentation support we used multiple AI assistants.
 
 Contributors:
 - Idea & Architecture: Aleksander
 - Core Logic & QA: Aleksander
-- Debugging & Review: DeepSeek V4.1 Pro
-- Documentation: DeepSeek + Aleksander
+- Debugging & Review: DeepSeek V4.1 Pro, Qwen 3.5plus
+- Documentation & Editing: DeepSeek, Qwen 3.5plus, Copilot (GitHub Copilot), Aleksander
+
+Notes:
+- Qwen 3.5plus was used for debugging assistance and documentation drafting.
+- Copilot (GitHub Copilot) assisted with wording, formatting, and repository updates.
 
 ---
 
