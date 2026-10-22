@@ -1,0 +1,40 @@
+name: SanderTrap Audit
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v5
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Debug - List Files
+      run: |
+        echo "Current directory: $(pwd)"
+        ls -la
+        echo "--- Java Files ---"
+        find . -name "*.java"
+
+    - name: Compile Java Source
+      run: |
+        echo "Compiling SanderTrap..."
+        mkdir -p build
+        javac -d build $(find . -name "*.java")
+        echo "Compilation verified. SanderTrap is ready."
+
+    - name: Verify Compilation
+      run: |
+        echo "Checking compiled classes..."
+        find build -name "*.class" | head -n 5
